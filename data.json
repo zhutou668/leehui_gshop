@@ -1,0 +1,28 @@
+{
+  "address": {
+    "address": "北京市昌平区",
+    "city": " 北京市",
+    "geohash": "40.10038,116.36867",
+    "latitude": "40.10038",
+    "longitude": "116.36867",
+    "name": "昌平区公园区"
+  },
+  "catergorys":[
+    {"_v": 0,  "id": 0, "description" : "综合各种餐食", "icon_url": "", "image_url" : "food (15).png", "is_in_serving": "true", "link" : "", "title" : "综合", "tittle_color" : ""},
+    {"_v": 1,  "id": 1, "description" : "苦了累了，来点甜的", "icon_url": "", "image_url" : "kitchen (2).png", "is_in_serving": "true", "link" : "", "title" : "甜品", "tittle_color" : ""},
+    {"_v": 2,  "id": 2, "description" : "各种盖饭", "icon_url": "", "image_url" : "food (8).png", "is_in_serving": "true", "link" : "", "title" : "盖饭", "tittle_color" : ""},
+    {"_v": 3,  "id": 3, "description" : "各种汤品", "icon_url": "", "image_url" : "food (16).png", "is_in_serving": "true", "link" : "", "title" : "汤品", "tittle_color" : ""},
+    {"_v": 4,  "id": 4, "description" : "素食带来美好生活", "icon_url": "", "image_url" : "food (21).png", "is_in_serving": "true", "link" : "", "title" : "素食", "tittle_color" : ""},
+    {"_v": 5,  "id": 5, "description" : "多喝果汁皮肤健康", "icon_url": "", "image_url" : "food (20).png", "is_in_serving": "true", "link" : "", "title" : "果汁", "tittle_color" : ""},
+    {"_v": 6,  "id": 6, "description" : "新鲜海鲜店", "icon_url": "", "image_url" : "animal (1).png", "is_in_serving": "true", "link" : "", "title" : "海鲜", "tittle_color" : ""},
+    {"_v": 7,  "id": 7, "description" : "日本各种餐食", "icon_url": "", "image_url" : "food (25).png", "is_in_serving": "true", "link" : "", "title" : "日料", "tittle_color" : ""},
+    {"_v": 8,  "id": 8, "description" : "香辣烧烤", "icon_url": "", "image_url" : "food (23).png", "is_in_serving": "true", "link" : "", "title" : "烧烤", "tittle_color" : ""},
+    {"_v": 9,  "id": 9, "description" : "各种炒饭炒菜", "icon_url": "", "image_url" : "food (17).png", "is_in_serving": "true", "link" : "", "title" : "炒饭", "tittle_color" : ""},
+    {"_v": 10, "id": 10,  "description" : "手工面，炒面非常好吃", "icon_url": "", "image_url" : "food (13).png", "is_in_serving": "true", "link" : "", "title" : "炒面", "tittle_color" : ""},
+    {"_v": 11, "id": 11,  "description" : "汉堡，各种肉包，面包", "icon_url": "", "image_url" : "food (5).png", "is_in_serving": "true", "link" : "", "title" : "面包", "tittle_color" : ""},
+    {"_v": 12, "id": 12,  "description" : "仅需要10分钟您就可以尝试了", "icon_url": "", "image_url" : "food (10).png", "is_in_serving": "true", "link" : "", "title" : "快餐", "tittle_color" : ""},
+    {"_v": 13, "id": 13,  "description" : "喝杯饮料让您的生活更甜", "icon_url": "", "image_url" : "food (7).png", "is_in_serving": "true", "link" : "", "title" : "饮料", "tittle_color" : ""},
+    {"_v": 14, "id": 14,  "description" : "四川，北京各省区餐食味道满满好吃的味道", "icon_url": "", "image_url" : "kitchen.png", "is_in_serving": "true", "link" : "", "title" : "炒肉", "tittle_color" : ""},
+    {"_v": 15, "id": 15,  "description" : "西方餐食，汉堡，比萨，星巴克", "icon_url": "", "image_url" : "food (2).png", "is_in_serving": "true", "link" : "", "title" : "比萨", "tittle_color" : ""}
+  ]
+}
