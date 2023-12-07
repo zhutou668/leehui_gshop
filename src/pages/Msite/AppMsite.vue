@@ -4,7 +4,7 @@
      <span class="header_left" slot="header_left"><font-awesome-icon icon="fa-solid fa-magnifying-glass" size:50px/></span>
      <router-link class="header_right" to="/applogin" slot="header_right">登录/注册</router-link>
      </AppHeaderTop>
-     <MenuSlide :slideImage="slideImage" :slideTitle="slideTitle"></MenuSlide>
+     <MenuSlide></MenuSlide>
      <ShopList>
 
      </ShopList>
@@ -28,19 +28,14 @@
         MenuSlide,
         ShopList
      },
-     data(){
-      return {
-         slideImage:require('../../static/image/food6.png'),
-         slideTitle:"盖饭"
-      }
-     },
       mounted() {
      //   this.$store.dispatch('getPosts')
      //   console.log(this.posts)
      // this.$store.dispatch('getProfile')	
-     console.log(this.$router)
+     
      this.getCatergorys();
      this.getAddress(); 
+
       },
 
      methods: {
@@ -48,7 +43,7 @@
 
      },
      computed: {
-        ...mapState(['address','catergorys'])
+        ...mapState(['address','catergorys']),
      }
   }
 

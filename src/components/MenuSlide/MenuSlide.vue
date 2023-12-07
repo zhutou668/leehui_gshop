@@ -2,17 +2,16 @@
 <div class="Menu_Slide">
     <div class="swiper-container">
     <div class="swiper-wrapper">
-        <div class="swiper-slide">
+        <div class="swiper-slide" v-for="a in catergorys.length" :key="a">
             <div class="MenuSlide_item_box">
-                <a href="#" v-for="n in 8" :key="n" class="Msite_Menu_item" >
-                     <img :src="slideImage" class="Msite_menu_image" alt="" srcset="">
+                <a href="#" v-for="catergory in catergorys[a - 1 ]" :key="catergory.id" class="Msite_Menu_item" >
+                     <img :src="Base_URL(catergory.image_url) "   class="Msite_menu_image" alt="" srcset="">
                       <p class="Msite_menu_title">
-                     {{slideTitle}} {{n}}
+                     {{catergory.title}}
                       </p>
                 </a>
             </div>
         </div>
-        <div class="swiper-slide">Slide 2</div>
     </div>
     <!-- 如果需要分页器 -->
     <div class="swiper-pagination"></div>
@@ -23,30 +22,47 @@
 
 <script>
 
+
 import Swiper from 'swiper';
   // import Swiper styles
+
 import 'swiper/dist/css/swiper.min.css';
+import { mapState } from 'vuex';
 
 
 export default {
     name: "MenuSlide",
-    props:{
-            slideImage: String,
-            slideTitle: String
-
-        },
-
-    mounted(){
-        new Swiper('.swiper-container', {
-         loop: true,
+    data(){
+      return {
          
-         pagination: {
-            el: '.swiper-pagination',
-            },
+      }
+     },
+     methods: {
+      Base_URL (URl) {
+        const Base = require(`../../static/image/${URl}`) 
+        console.log(URl);
+          return Base
+        }
+     },    
+    computed: {
+        ...mapState(['catergorys']),
 
-         });
-        //  console.log(this.slideImage)
-    }
+     },
+     watch: {
+        catergorys(value) {
+          console.log(value)
+          this.$nextTick(()=>{ 
+          new Swiper('.swiper-container', {
+          loop: true,
+          
+          pagination: {
+              el: '.swiper-pagination',
+              },
+ 
+          });
+        })
+        }
+     }
 }
 </script>
 

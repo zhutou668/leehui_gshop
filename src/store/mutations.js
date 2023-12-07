@@ -7,7 +7,6 @@ import {
  export default {
     [RECEIVE_ADDRESS] (state,{address}){
         state.address = address
-        console.log( state.address)
     },
 
     [RECEIVE_CATERGORYS] (state,{catergorys}){
