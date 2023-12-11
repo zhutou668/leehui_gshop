@@ -4,253 +4,31 @@
             <font-awesome-icon :icon="['fas', 'bars']" />
             <p class="shop_list_header_title">附近商家</p>
         </div>
-        <div class="shop_list">
+        <div class="shop_list" v-for="shop in shops" :key="shop.id">
         <div class="shop_img">
-            <img src="../../static/image/food6.png" alt="" srcset="">
+            <img :src="imgBaseUrl(shop.image_path)" alt="" srcset="">
         </div>
         <div class="shop_list_content_header">
             <div class="shop_list_info">
             <p class="shop_list_info_title">
                 <span class="shop_list_info_subtitle">品牌</span>
-                牛肉饭，炒饭各种盖饭餐时，炒饭各种盖饭餐时
+                {{shop.name}}
             </p>
             <p class="shop_list_info_evaluate">
-                <img src="../../static/image/starfull.png" class="shop_list_info_img" alt="" srcset="">
-                <img src="../../static/image/starfull.png" class="shop_list_info_img" alt="" srcset="">
-                <img src="../../static/image/starfull.png" class="shop_list_info_img" alt="" srcset="">
-                <img src="../../static/image/starfull.png" class="shop_list_info_img" alt="" srcset="">
-                <img src="../../static/image/starfull.png" class="shop_list_info_img" alt="" srcset="">
-                <span class="shop_list_info_vote">4.5</span>
-                <span class="shop_list_info_sell">月售100单</span>
+                <StarRating :rating="shop.rating"/>
+                <span class="shop_list_info_vote">{{shop.rating}}</span>
+                <span class="shop_list_info_sell">月售{{shop.recent_order_num}}单</span>
             </p>
             <p class="shop_list_info_condition">
-                <span class="shop_list_info_minium">&#165;20起送/配送费均&#165;5</span>
+                <span class="shop_list_info_minium">&#165;{{shop.float_minimum_order_amount}}起送/配送费均&#165;{{shop.float_delivery_fee}}</span>
             </p>
             </div>
             <div class="shop_list_mark">
                 <p class="shop_list_mark_title">
-                    <span class="shop_list_mark_text">保</span>
-                    <span class="shop_list_mark_text">准</span>
-                    <span class="shop_list_mark_text">票</span>
+                    <span class="shop_list_mark_text" v-for="(support,index) in shop.support" :key="index">{{support.icon_name}}</span>
                 </p>
                 <p class="shop_list_mark_title">
-                    <span class="shop_list_mark_content">保</span>
-                </p>
-            </div>
-        </div>
-
-        </div>
-        <div class="shop_list">
-        <div class="shop_img">
-            <img src="../../static/image/food6.png" alt="" srcset="">
-        </div>
-        <div class="shop_list_content_header">
-            <div class="shop_list_info">
-            <p class="shop_list_info_title">
-                <span class="shop_list_info_subtitle">品牌</span>
-                牛肉饭，炒饭各种盖饭餐时，炒饭各种盖饭餐时
-            </p>
-            <p class="shop_list_info_evaluate">
-                <img src="../../static/image/starfull.png" class="shop_list_info_img" alt="" srcset="">
-                <img src="../../static/image/starfull.png" class="shop_list_info_img" alt="" srcset="">
-                <img src="../../static/image/starfull.png" class="shop_list_info_img" alt="" srcset="">
-                <img src="../../static/image/starfull.png" class="shop_list_info_img" alt="" srcset="">
-                <img src="../../static/image/starfull.png" class="shop_list_info_img" alt="" srcset="">
-                <span class="shop_list_info_vote">4.5</span>
-                <span class="shop_list_info_sell">月售100单</span>
-            </p>
-            <p class="shop_list_info_condition">
-                <span class="shop_list_info_minium">&#165;20起送/配送费均&#165;5</span>
-            </p>
-            </div>
-            <div class="shop_list_mark">
-                <p class="shop_list_mark_title">
-                    <span class="shop_list_mark_text">保</span>
-                    <span class="shop_list_mark_text">准</span>
-                    <span class="shop_list_mark_text">票</span>
-                </p>
-                <p class="shop_list_mark_title">
-                    <span class="shop_list_mark_content">保</span>
-                </p>
-            </div>
-        </div>
-
-        </div>
-        <div class="shop_list">
-        <div class="shop_img">
-            <img src="../../static/image/food6.png" alt="" srcset="">
-        </div>
-        <div class="shop_list_content_header">
-            <div class="shop_list_info">
-            <p class="shop_list_info_title">
-                <span class="shop_list_info_subtitle">品牌</span>
-                牛肉饭，炒饭各种盖饭餐时，炒饭各种盖饭餐时
-            </p>
-            <p class="shop_list_info_evaluate">
-                <img src="../../static/image/starfull.png" class="shop_list_info_img" alt="" srcset="">
-                <img src="../../static/image/starfull.png" class="shop_list_info_img" alt="" srcset="">
-                <img src="../../static/image/starfull.png" class="shop_list_info_img" alt="" srcset="">
-                <img src="../../static/image/starfull.png" class="shop_list_info_img" alt="" srcset="">
-                <img src="../../static/image/starfull.png" class="shop_list_info_img" alt="" srcset="">
-                <span class="shop_list_info_vote">4.5</span>
-                <span class="shop_list_info_sell">月售100单</span>
-            </p>
-            <p class="shop_list_info_condition">
-                <span class="shop_list_info_minium">&#165;20起送/配送费均&#165;5</span>
-            </p>
-            </div>
-            <div class="shop_list_mark">
-                <p class="shop_list_mark_title">
-                    <span class="shop_list_mark_text">保</span>
-                    <span class="shop_list_mark_text">准</span>
-                    <span class="shop_list_mark_text">票</span>
-                </p>
-                <p class="shop_list_mark_title">
-                    <span class="shop_list_mark_content">保</span>
-                </p>
-            </div>
-        </div>
-
-        </div>
-        <div class="shop_list">
-        <div class="shop_img">
-            <img src="../../static/image/food6.png" alt="" srcset="">
-        </div>
-        <div class="shop_list_content_header">
-            <div class="shop_list_info">
-            <p class="shop_list_info_title">
-                <span class="shop_list_info_subtitle">品牌</span>
-                牛肉饭，炒饭各种盖饭餐时，炒饭各种盖饭餐时
-            </p>
-            <p class="shop_list_info_evaluate">
-                <img src="../../static/image/starfull.png" class="shop_list_info_img" alt="" srcset="">
-                <img src="../../static/image/starfull.png" class="shop_list_info_img" alt="" srcset="">
-                <img src="../../static/image/starfull.png" class="shop_list_info_img" alt="" srcset="">
-                <img src="../../static/image/starfull.png" class="shop_list_info_img" alt="" srcset="">
-                <img src="../../static/image/starfull.png" class="shop_list_info_img" alt="" srcset="">
-                <span class="shop_list_info_vote">4.5</span>
-                <span class="shop_list_info_sell">月售100单</span>
-            </p>
-            <p class="shop_list_info_condition">
-                <span class="shop_list_info_minium">&#165;20起送/配送费均&#165;5</span>
-            </p>
-            </div>
-            <div class="shop_list_mark">
-                <p class="shop_list_mark_title">
-                    <span class="shop_list_mark_text">保</span>
-                    <span class="shop_list_mark_text">准</span>
-                    <span class="shop_list_mark_text">票</span>
-                </p>
-                <p class="shop_list_mark_title">
-                    <span class="shop_list_mark_content">保</span>
-                </p>
-            </div>
-        </div>
-
-        </div>
-        <div class="shop_list">
-        <div class="shop_img">
-            <img src="../../static/image/food6.png" alt="" srcset="">
-        </div>
-        <div class="shop_list_content_header">
-            <div class="shop_list_info">
-            <p class="shop_list_info_title">
-                <span class="shop_list_info_subtitle">品牌</span>
-                牛肉饭，炒饭各种盖饭餐时，炒饭各种盖饭餐时
-            </p>
-            <p class="shop_list_info_evaluate">
-                <img src="../../static/image/starfull.png" class="shop_list_info_img" alt="" srcset="">
-                <img src="../../static/image/starfull.png" class="shop_list_info_img" alt="" srcset="">
-                <img src="../../static/image/starfull.png" class="shop_list_info_img" alt="" srcset="">
-                <img src="../../static/image/starfull.png" class="shop_list_info_img" alt="" srcset="">
-                <img src="../../static/image/starfull.png" class="shop_list_info_img" alt="" srcset="">
-                <span class="shop_list_info_vote">4.5</span>
-                <span class="shop_list_info_sell">月售100单</span>
-            </p>
-            <p class="shop_list_info_condition">
-                <span class="shop_list_info_minium">&#165;20起送/配送费均&#165;5</span>
-            </p>
-            </div>
-            <div class="shop_list_mark">
-                <p class="shop_list_mark_title">
-                    <span class="shop_list_mark_text">保</span>
-                    <span class="shop_list_mark_text">准</span>
-                    <span class="shop_list_mark_text">票</span>
-                </p>
-                <p class="shop_list_mark_title">
-                    <span class="shop_list_mark_content">保</span>
-                </p>
-            </div>
-        </div>
-
-        </div>
-        <div class="shop_list">
-        <div class="shop_img">
-            <img src="../../static/image/food6.png" alt="" srcset="">
-        </div>
-        <div class="shop_list_content_header">
-            <div class="shop_list_info">
-            <p class="shop_list_info_title">
-                <span class="shop_list_info_subtitle">品牌</span>
-                牛肉饭，炒饭各种盖饭餐时，炒饭各种盖饭餐时
-            </p>
-            <p class="shop_list_info_evaluate">
-                <img src="../../static/image/starfull.png" class="shop_list_info_img" alt="" srcset="">
-                <img src="../../static/image/starfull.png" class="shop_list_info_img" alt="" srcset="">
-                <img src="../../static/image/starfull.png" class="shop_list_info_img" alt="" srcset="">
-                <img src="../../static/image/starfull.png" class="shop_list_info_img" alt="" srcset="">
-                <img src="../../static/image/starfull.png" class="shop_list_info_img" alt="" srcset="">
-                <span class="shop_list_info_vote">4.5</span>
-                <span class="shop_list_info_sell">月售100单</span>
-            </p>
-            <p class="shop_list_info_condition">
-                <span class="shop_list_info_minium">&#165;20起送/配送费均&#165;5</span>
-            </p>
-            </div>
-            <div class="shop_list_mark">
-                <p class="shop_list_mark_title">
-                    <span class="shop_list_mark_text">保</span>
-                    <span class="shop_list_mark_text">准</span>
-                    <span class="shop_list_mark_text">票</span>
-                </p>
-                <p class="shop_list_mark_title">
-                    <span class="shop_list_mark_content">保</span>
-                </p>
-            </div>
-        </div>
-
-        </div>
-        <div class="shop_list">
-        <div class="shop_img">
-            <img src="../../static/image/food6.png" alt="" srcset="">
-        </div>
-        <div class="shop_list_content_header">
-            <div class="shop_list_info">
-            <p class="shop_list_info_title">
-                <span class="shop_list_info_subtitle">品牌</span>
-                牛肉饭，炒饭各种盖饭餐时，炒饭各种盖饭餐时
-            </p>
-            <p class="shop_list_info_evaluate">
-                <img src="../../static/image/starfull.png" class="shop_list_info_img" alt="" srcset="">
-                <img src="../../static/image/starfull.png" class="shop_list_info_img" alt="" srcset="">
-                <img src="../../static/image/starfull.png" class="shop_list_info_img" alt="" srcset="">
-                <img src="../../static/image/starfull.png" class="shop_list_info_img" alt="" srcset="">
-                <img src="../../static/image/starhalf.png" class="shop_list_info_img" alt="" srcset="">
-                <span class="shop_list_info_vote">4.5</span>
-                <span class="shop_list_info_sell">月售100单</span>
-            </p>
-            <p class="shop_list_info_condition">
-                <span class="shop_list_info_minium">&#165;20起送/配送费均&#165;5</span>
-            </p>
-            </div>
-            <div class="shop_list_mark">
-                <p class="shop_list_mark_title">
-                    <span class="shop_list_mark_text">保</span>
-                    <span class="shop_list_mark_text">准</span>
-                    <span class="shop_list_mark_text">票</span>
-                </p>
-                <p class="shop_list_mark_title">
-                    <span class="shop_list_mark_content">保</span>
+                    <span class="shop_list_mark_content">{{shop.delivery_mode.text}}</span>
                 </p>
             </div>
         </div>
@@ -261,8 +39,24 @@
 </template>
 
 <script>
+import { mapState } from 'vuex'
+import StarRating from "../StarRating/StarRating.vue"
+
 export default {
     name:'ShopList',
+    computed: {
+        ...mapState(['shops'])
+    },
+    components:{
+        StarRating
+    },
+
+    methods: {
+        imgBaseUrl (URl) {
+            const imgPath = require(`../../static/shopImage/${URl}`) 
+          return imgPath
+        }
+    }
 }
 </script>
 
@@ -352,6 +146,11 @@ export default {
         margin: 3px;
     }
 
+    .shop_list_info_evaluate {
+        display: flex;
+        align-items: center;
+    }
+
     .shop_list_info_img {
         max-width: 15px;
     }
@@ -360,6 +159,10 @@ export default {
         font-size: 14px;
         color: #ffd100;
         
+    }
+
+    .shop_list_mark_content {
+        color: #57A9FF;
     }
 
 

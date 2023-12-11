@@ -11,4 +11,5 @@ export const reqAddress = () => ajax (`${BASE_URL}/address`)
 export const reqCatergorys = () => ajax (`${BASE_URL}/catergorys`)
 
 
+export const reqShops = () => ajax (`${BASE_URL}/shops`)
 // export const reqAddress = () => ajax ()

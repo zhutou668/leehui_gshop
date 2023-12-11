@@ -1,7 +1,8 @@
 //直接更新state的多个方法的对象
 import {
     RECEIVE_ADDRESS,
-    RECEIVE_CATERGORYS
+    RECEIVE_CATERGORYS,
+    RECEIVE_SHOPS
 } from './mutations-type'
 
  export default {
@@ -11,6 +12,9 @@ import {
 
     [RECEIVE_CATERGORYS] (state,{catergorys}){
         state.catergorys = catergorys
-        console.log( state.catergorys) 
+    },
+    [RECEIVE_SHOPS] (state,{shops}) {
+        state.shops = shops
+        console.log(shops)
     }
  }

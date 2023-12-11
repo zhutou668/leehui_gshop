@@ -40,10 +40,9 @@ export default {
      methods: {
       Base_URL (URl) {
         const Base = require(`../../static/image/${URl}`) 
-        console.log(URl);
           return Base
         }
-     },    
+     },     
     computed: {
         ...mapState(['catergorys']),
 

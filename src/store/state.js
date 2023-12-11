@@ -4,7 +4,6 @@
     longitude: "116.36867",
     address: {},
     catergorys:[],
-    shop:[],
-
+    shops:[],
 
  }

@@ -35,11 +35,12 @@
      
      this.getCatergorys();
      this.getAddress(); 
+     this.getShops(); 
 
       },
 
      methods: {
-        ...mapActions(['getCatergorys','getAddress']),
+        ...mapActions(['getCatergorys','getAddress','getShops']),
 
      },
      computed: {

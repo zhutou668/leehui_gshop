@@ -2,12 +2,14 @@
 
 import {
     RECEIVE_ADDRESS,
-    RECEIVE_CATERGORYS
+    RECEIVE_CATERGORYS,
+    RECEIVE_SHOPS
 } from './mutations-type'
 
 import {
     reqAddress,
-    reqCatergorys
+    reqCatergorys,
+    reqShops
 } from '../api'
 
  export default {
@@ -45,5 +47,11 @@ import {
         const catergorys = catergorysArr
 
         commit(RECEIVE_CATERGORYS,{catergorys})
+    },
+
+    async getShops ({commit}) {
+        const result = await reqShops ()
+        const shops = result 
+        commit (RECEIVE_SHOPS,{shops})
     }
  }
