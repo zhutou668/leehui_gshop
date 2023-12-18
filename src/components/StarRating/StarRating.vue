@@ -15,6 +15,9 @@
             starNone: require("../../static/image/starnone.png"),
           };
         },
+        mounted(){
+
+        },
         methods: {
           getImage(index) {
               if (index <= Math.floor(this.rating)) {

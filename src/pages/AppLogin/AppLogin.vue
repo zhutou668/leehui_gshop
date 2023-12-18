@@ -15,15 +15,15 @@
 
     <div class="login_phone_box" v-show="phoneLogin">
       <div class="login_phone_form" >
-      <input type="number" maxlength='13' 
+      <input type="number" v-model.number="phoneNumber" maxlength='13' 
       oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
       placeholder="手机号">
-      <input type="number" maxlength='6'
+      <input type="number" v-model.number="otp" maxlength='6'
       oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
       placeholder="验证码">
-      <span class="login_getCode">
-        获取验证码
-      </span>
+      <button :disabled="!isTruePhone" class="login_getCode" :class="{true_phone: isTruePhone}" @click="getCode">
+        {{countTime > 0 ? `已发送(${countTime}s)` : '获取验证码'}}
+      </button>
       </div>
       <div class="login_rules">
         <p class="login_rules_text">
@@ -41,9 +41,9 @@
 
     <div class="login_password" v-show="!phoneLogin">
         <input type="text" placeholder="手机号/邮箱/账号">
-        <input type="password" v-if="!isShowpassword" v-model="password" placeholder="密码">
-        <input type="text" v-if="isShowpassword" v-model="password" placeholder="密码">
-        <input type="text" placeholder="验证码">
+        <input type="password" v-if="!isShowpassword" v-model="passWord" placeholder="密码">
+        <input type="text" v-else v-model="passWord" placeholder="密码">
+        <input type="text" placeholder="验证码" v-model="captcha">
         <input type="checkbox" v-model="isShowpassword"  id="s5" />
         <label class="slider-v3 fixed_button" for="s5"></label>
         <div class="login_button">
@@ -62,9 +62,32 @@ export default {
     name:'AppLogin',
     data(){
       return {
-        password:'',
+        countTime: 0,
+        phoneNumber: '',
+        otp: '',
+        captcha: '',
+        passWord:'',
         phoneLogin: true,
         isShowpassword: false
+      }
+    },
+    computed:{
+      isTruePhone(){
+        return /^1\d{12}$/.test(this.phoneNumber)
+      }
+    },
+    methods:{
+      getCode (){
+        alert(1)
+        if( !this.countTime){
+          this.countTime = 30
+          const getCodeTime =  setInterval(() => {
+          this.countTime --
+          if(this.countTime <= 0) {
+            clearInterval(getCodeTime)
+          }
+        }, 1000);
+        }
       }
     }
 
@@ -139,7 +162,14 @@ export default {
     position: absolute;
     top: 13px;
     right: 3%;
+    border: none;
+    background: none;
+    color: #969b9f;
     padding: 14px;
+  }
+
+  .true_phone {
+    color: #000;
   }
 
   .login_rules {

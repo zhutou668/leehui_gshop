@@ -42,13 +42,15 @@
 import { mapState } from 'vuex'
 import StarRating from "../StarRating/StarRating.vue"
 
+
 export default {
     name:'ShopList',
     computed: {
         ...mapState(['shops'])
     },
     components:{
-        StarRating
+        StarRating,
+        JsTesting
     },
 
     methods: {
@@ -110,6 +112,7 @@ export default {
         flex: 1;
         max-width: 70%;
         display: flex;
+        margin-left: 4px;
         flex-direction: column;
         justify-content: space-around;
     }
