@@ -1,18 +1,15 @@
 <template>
-   <AppHeaderTop title="外卖订单">
-   </AppHeaderTop>
+    <AppHeaderTop title="外卖订单"> </AppHeaderTop>
 </template>
-   
+
 <script>
-      import AppHeaderTop from "../../components/HeaderTop/AppHeaderTop.vue"
-    export default {
-        name:'AppOrder',
-        components:{
-            AppHeaderTop
-        }
-    }
+import AppHeaderTop from '../../components/HeaderTop/AppHeaderTop.vue';
+export default {
+    name: 'AppOrder',
+    components: {
+        AppHeaderTop,
+    },
+};
 </script>
-   
-   <style scoped>
-  
-</style>
+
+<style scoped></style>

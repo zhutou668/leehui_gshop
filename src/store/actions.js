@@ -1,57 +1,52 @@
-//通过mutation间接更新state的多个对象 
+//通过mutation间接更新state的多个对象
 
 import {
     RECEIVE_ADDRESS,
     RECEIVE_CATERGORYS,
-    RECEIVE_SHOPS
-} from './mutations-type'
+    RECEIVE_SHOPS,
+} from './mutations-type';
 
-import {
-    reqAddress,
-    reqCatergorys,
-    reqShops
-} from '../api'
+import { reqAddress, reqCatergorys, reqShops } from '../api';
 
- export default {
+export default {
     //异步获取POSTS
-    async getAddress ({commit}){
+    async getAddress({ commit }) {
         //发送异步ajax请求
 
-       const result = await reqAddress()
+        const result = await reqAddress();
         //提交mutations
-        const address = result
-        // console.log(posts) 
-        commit(RECEIVE_ADDRESS,{address})
+        const address = result;
+        // console.log(posts)
+        commit(RECEIVE_ADDRESS, { address });
     },
 
-    async getCatergorys ({commit}){
+    async getCatergorys({ commit }) {
         //发送异步ajax请求
 
-       const result = await reqCatergorys()
+        const result = await reqCatergorys();
         //提交mutations
-        const catergorysList = result
-        let catergorysMin = []
-        const catergorysArr = []
-        // console.log(posts) 
-         catergorysList.forEach(c => {
-                if (catergorysMin.length < 8) {
-                    catergorysMin.push(c)
-                }
-                if (catergorysMin.length === 8)
-                {
-                    catergorysArr.push(catergorysMin)
-                    catergorysMin= []
-                }
+        const catergorysList = result;
+        let catergorysMin = [];
+        const catergorysArr = [];
+        // console.log(posts)
+        catergorysList.forEach((c) => {
+            if (catergorysMin.length < 8) {
+                catergorysMin.push(c);
+            }
+            if (catergorysMin.length === 8) {
+                catergorysArr.push(catergorysMin);
+                catergorysMin = [];
+            }
         });
 
-        const catergorys = catergorysArr
+        const catergorys = catergorysArr;
 
-        commit(RECEIVE_CATERGORYS,{catergorys})
+        commit(RECEIVE_CATERGORYS, { catergorys });
     },
 
-    async getShops ({commit}) {
-        const result = await reqShops ()
-        const shops = result 
-        commit (RECEIVE_SHOPS,{shops})
-    }
- }
+    async getShops({ commit }) {
+        const result = await reqShops();
+        const shops = result;
+        commit(RECEIVE_SHOPS, { shops });
+    },
+};

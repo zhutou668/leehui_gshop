@@ -1,31 +1,28 @@
 <template>
-  <div id="app">
-    <router-view/>
-    <FooterGuideline/>
-  </div>
+    <div id="app">
+        <router-view />
+        <FooterGuideline />
+    </div>
 </template>
 
 <script>
-
- import FooterGuideline from "./components/FooterGuide/FooterGuideline.vue"
-
+import FooterGuideline from './components/FooterGuide/FooterGuideline.vue';
 
 export default {
-  name:'App',
-  components: {
-    /* eslint-disable */
-    FooterGuideline
-  }
-}
+    name: 'App',
+    components: {
+        /* eslint-disable */
+        FooterGuideline,
+    },
+};
 </script>
 
 <style>
-  #app {
+#app {
     width: 100%;
-  }
+}
 
-  body {
+body {
     margin: 0;
-  }
-
+}
 </style>
